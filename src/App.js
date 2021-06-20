@@ -1,17 +1,21 @@
 import React, {useState} from 'react' ;
 
-import Button from './Button';
+import Button from './components/Button';
+import Container from './components/Container';
+
 
 const App = () =>{
 	let [counter,setCount] = useState( 2 ) ;
 	return (
-		<div>
+		<Container>
 			<h1>Click Counter</h1>  
-			<h2>{counter}</h2>
-			<Button text = '+' buttonClick = { () => {setCount(counter+1) } } >  </Button>
-			<Button text = '-' buttonClick=  { () => { setCount(counter - 1) } }></Button>
-			<Button text = 'RESET' buttonClick= { () => { setCount(0) } }>       </Button>
-		</div>
+			<h2 style={{ fontSize:'72px'}}>{counter}</h2>
+      <div style={{display:"flex"}}>
+        <Button text = '+' onClick = { () => {setCount(counter+1) } } >  </Button>
+        <Button text = '-' onClick=  { () => { setCount(counter - 1) } }></Button>
+      </div>
+			<Button text = 'RESET' onClick= { () => { setCount(0) } }>       </Button>
+		</Container>
 	)
 }
 
